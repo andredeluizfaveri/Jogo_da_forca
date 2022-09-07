@@ -1,11 +1,8 @@
 #include <iostream>
-#include <map>
-#include <string>
+#include "imprimepalavrasacertadas.hpp"
 
-extern std::map<char, bool> chutou;
-extern std::string palavra_secreta;
 
-void imprimepalavrasacertadas(){
+void imprimepalavrasacertadas(std::string palavra_secreta, std::map<char, bool> chutou){
     for (char letra : palavra_secreta){
         if (chutou[letra])
         {

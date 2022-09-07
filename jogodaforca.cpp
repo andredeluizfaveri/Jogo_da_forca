@@ -7,7 +7,6 @@
 #include <fstream>
 #include "letra_existe.hpp"
 #include "nao_acertou.hpp"
-#include "nao_enforcou.hpp"
 #include "imprimecabecario.hpp"
 #include "imprimechuteserrados.hpp"
 #include "imprimepalavrasacertadas.hpp"
@@ -25,17 +24,16 @@ using namespace std;
 
 int main(){
     imprimecabecario();
-    sorteia_palavra();
-    le_arquivo();
-    while (nao_acertou() && nao_enforcou() )
+    palavra_secreta = sorteia_palavra();
+    while (nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < 5 )
     {
-        imprimechuteserrados();
-        imprimepalavrasacertadas();
-        escrevechute();
+        imprimechuteserrados(chutes_errados);
+        imprimepalavrasacertadas(palavra_secreta, chutou);
+        escrevechute(&chutou, &chutes_errados);
     }
     cout << "Fim de jogo!" << endl;
     cout << "A palavra secreta era: " << palavra_secreta << endl;
-    if (nao_acertou())
+    if (nao_acertou(palavra_secreta, chutou))
     {
         cout << "Você PERDEU! Tente novamente!";
     }else{
