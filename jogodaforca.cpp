@@ -18,18 +18,18 @@
 
 using namespace std;
 
-    string palavra_secreta;
-    map<char, bool> chutou;
-    vector<char> chutes_errados;
+    static string palavra_secreta;
+    static map<char, bool> chutou;
+    static vector<char> chutes_errados;
 
 int main(){
     imprimecabecario();
     palavra_secreta = sorteia_palavra();
-    while (nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < 5 )
+    while ( nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < 5 )
     {
-        imprimechuteserrados(chutes_errados);
-        imprimepalavrasacertadas(palavra_secreta, chutou);
-        escrevechute(&chutou, &chutes_errados);
+        Forca::imprimechuteserrados(chutes_errados);
+        Forca::imprimepalavrasacertadas(palavra_secreta, chutou);
+        Forca::escrevechute(chutou, chutes_errados, palavra_secreta);
     }
     cout << "Fim de jogo!" << endl;
     cout << "A palavra secreta era: " << palavra_secreta << endl;

@@ -2,9 +2,9 @@
 #include "imprimepalavrasacertadas.hpp"
 
 
-void imprimepalavrasacertadas(std::string palavra_secreta, std::map<char, bool> chutou){
+void Forca:: imprimepalavrasacertadas(std::string& palavra_secreta,const std::map<char, bool>& chutou){
     for (char letra : palavra_secreta){
-        if (chutou[letra])
+        if (chutou.find(letra) != chutou.end())
         {
             std::cout << letra << " ";
         }else{

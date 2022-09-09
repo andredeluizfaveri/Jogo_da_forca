@@ -1,6 +1,4 @@
-
-#include <vector>
-extern std:: vector<char> chutes_errados;
+#include "nao_enforcou.hpp"
 
 bool nao_enforcou(){
     

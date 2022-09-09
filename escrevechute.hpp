@@ -1,3 +1,6 @@
 #include <vector>
 #include<map>
-void escrevechute(std::map<char, bool> * chutou, std::vector<char> * chutes_errados);
+
+namespace Forca{
+    void escrevechute(std::map<char, bool>& chutou, std::vector<char>& chutes_errados, std::string& palavra_secreta);
+}

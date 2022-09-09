@@ -1,13 +1,11 @@
 #include <iostream>
-#include <vector>
+#include "imprimechuteserrados.hpp"
 
-
-
-void imprimechuteserrados(std::vector<char> chutes_errados){
-    std::cout << "Chutes errados: ";
-    for (char letra : chutes_errados)
-    {
-        std::cout << letra << " " ;
+    void Forca :: imprimechuteserrados(const std::vector<char>& chutes_errados){
+        std::cout << "Chutes errados: ";
+        for (char letra : chutes_errados)
+        {
+            std::cout << letra << " " ;
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
-}

@@ -1,1 +1,4 @@
-void imprimechuteserrados(std::vector<char> chutes_errados);
+#include <vector>
+namespace Forca{
+    void imprimechuteserrados(const std::vector<char>& chutes_errados);
+}
