@@ -3,7 +3,7 @@
 #include <ctime>
 #include <string>
 #include <map>
-#include <vector>
+#include <array>
 #include <fstream>
 #include "letra_existe.hpp"
 #include "nao_acertou.hpp"
@@ -20,12 +20,13 @@ using namespace std;
 
     static string palavra_secreta;
     static map<char, bool> chutou;
-    static vector<char> chutes_errados;
+    static array<char, 5> chutes_errados;
+    int numero_de_chutes=0;
 
 int main(){
     imprimecabecario();
     palavra_secreta = sorteia_palavra();
-    while ( nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < 5 )
+    while ( nao_acertou(palavra_secreta, chutou) && numero_de_chutes < 5 )
     {
         Forca::imprimechuteserrados(chutes_errados);
         Forca::imprimepalavrasacertadas(palavra_secreta, chutou);
